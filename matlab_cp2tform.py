@@ -576,51 +576,51 @@ if __name__ == '__main__':
     #        6.0872    2.2733
     #       -2.6570    4.3314
     """
-    u = [0, 6, -2]
-    v = [0, 3, 5]
-    x = [-1, 0, 4]
-    y = [-1, -10, 4]
+    # u = [0, 6, -2]
+    # v = [0, 3, 5]
+    # x = [-1, 0, 4]
+    # y = [-1, -10, 4]
 
-    uv = np.array((u, v)).T
-    xy = np.array((x, y)).T
+    # uv = np.array((u, v)).T
+    # xy = np.array((x, y)).T
 
-    print '\n--->uv:'
-    print uv
-    print '\n--->xy:'
-    print xy
+    # print '\n--->uv:'
+    # print uv
+    # print '\n--->xy:'
+    # print xy
 
-    trans, trans_inv = get_similarity_transform(uv, xy)
+    # trans, trans_inv = get_similarity_transform(uv, xy)
 
-    print '\n--->trans matrix:'
-    print trans
+    # print '\n--->trans matrix:'
+    # print trans
 
-    print '\n--->trans_inv matrix:'
-    print trans_inv
+    # print '\n--->trans_inv matrix:'
+    # print trans_inv
 
-    print '\n---> apply transform to uv'
-    print '\nxy_m = uv_augmented * trans'
-    uv_aug = np.hstack((
-        uv, np.ones((uv.shape[0], 1))
-    ))
-    xy_m = np.dot(uv_aug, trans)
-    print xy_m
+    # print '\n---> apply transform to uv'
+    # print '\nxy_m = uv_augmented * trans'
+    # uv_aug = np.hstack((
+    #     uv, np.ones((uv.shape[0], 1))
+    # ))
+    # xy_m = np.dot(uv_aug, trans)
+    # print xy_m
 
-    print '\nxy_m = tformfwd(trans, uv)'
-    xy_m = tformfwd(trans, uv)
-    print xy_m
+    # print '\nxy_m = tformfwd(trans, uv)'
+    # xy_m = tformfwd(trans, uv)
+    # print xy_m
 
-    print '\n---> apply inverse transform to xy'
-    print '\nuv_m = xy_augmented * trans_inv'
-    xy_aug = np.hstack((
-        xy, np.ones((xy.shape[0], 1))
-    ))
-    uv_m = np.dot(xy_aug, trans_inv)
-    print uv_m
+    # print '\n---> apply inverse transform to xy'
+    # print '\nuv_m = xy_augmented * trans_inv'
+    # xy_aug = np.hstack((
+    #     xy, np.ones((xy.shape[0], 1))
+    # ))
+    # uv_m = np.dot(xy_aug, trans_inv)
+    # print uv_m
 
-    print '\nuv_m = tformfwd(trans_inv, xy)'
-    uv_m = tformfwd(trans_inv, xy)
-    print uv_m
+    # print '\nuv_m = tformfwd(trans_inv, xy)'
+    # uv_m = tformfwd(trans_inv, xy)
+    # print uv_m
 
-    uv_m = tforminv(trans, xy)
-    print '\nuv_m = tforminv(trans, xy)'
-    print uv_m
+    # uv_m = tforminv(trans, xy)
+    # print '\nuv_m = tforminv(trans, xy)'
+    # print uv_m
