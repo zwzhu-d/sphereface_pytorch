@@ -50,8 +50,8 @@ def dataset_load(name,filename,pindex,cacheobj,zfile):
     src_pts = []
     for i in range(5):
         src_pts.append([int(split[2*i+2]),int(split[2*i+3])])
-    print(f'{nameinzip}')
-    exit()
+    # print(f'{nameinzip}')
+    # exit()
     data = np.frombuffer(zfile.read(nameinzip),np.uint8)
     img = cv2.imdecode(data,1)
     img = alignment(img,src_pts)
@@ -98,7 +98,9 @@ def train(epoch,args):
     correct = 0
     total = 0
     batch_idx = 0
-    ds = ImageDataset(args.dataset,dataset_load,'data/casia_landmark.txt',name=args.net+':train',
+    # ds = ImageDataset(args.dataset,dataset_load,'data/casia_landmark.txt',name=args.net+':train',
+    #     bs=args.bs,shuffle=True,nthread=6,imagesize=128)
+    ds = ImageDataset(args.dataset,dataset_load,None,name=args.net+':train',
         bs=args.bs,shuffle=True,nthread=6,imagesize=128)
     while True:
         img,label = ds.get()
