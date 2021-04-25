@@ -57,8 +57,8 @@ class ImageDataset(object):
 
         self.arrimage = Array(ctypes.c_float, 10*bs*3*imagesize*imagesize)
         self.arrlabel = Array(ctypes.c_float, 10*bs*3*imagesize*imagesize)
-        self.nparrimage = np.frombuffer(self.arrimage.get_obj(),np.float32).reshape(10,len(self.arrimage)/10)
-        self.nparrlabel = np.frombuffer(self.arrlabel.get_obj(),np.float32).reshape(10,len(self.arrlabel)/10)
+        self.nparrimage = np.frombuffer(self.arrimage.get_obj(),np.float32).reshape(10,int(len(self.arrimage)/10))
+        self.nparrlabel = np.frombuffer(self.arrlabel.get_obj(),np.float32).reshape(10,int(len(self.arrlabel)/10))
 
         self.filelist = Queue()
         self.result   = Queue()
